@@ -167,4 +167,16 @@ services:
     entrypoint:
     - npm
     - run
-    - server:dev:alt
+    - server:dev:alt 
+
+  build-process-test: 
+    image: unfetter-discoveer
+    container_name: unfetter-discover
+    depends_on:
+    - unfetter-discover
+    volumes: 
+    - ./unfetter-discover/unfetter/docker-compose
+    - ./unfetter-discover/unfetter/docker-compose.development.yml
+    entrypoint:
+    - npm
+    - run
