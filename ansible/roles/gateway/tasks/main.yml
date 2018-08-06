@@ -46,10 +46,10 @@
     networks:
       - name: "{{ docker_network_name }}"          
     exposed_ports: 
-    - "443"
+    - "{{ published_port }}"
     - "80"
     published_ports:
-    - "443:443"
+    - "{{ published_port }}:443"
     - "80:80"
 #    links: "{{ link_list }}"
     volumes: 
